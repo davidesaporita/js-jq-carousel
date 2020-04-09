@@ -47,6 +47,7 @@ main {
 }
 
 .img-container {
+    max-width: 800px;
     position: relative;
     margin: auto;
 }
