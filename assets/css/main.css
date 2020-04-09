@@ -90,6 +90,10 @@ main {
     background-color: blue;
 }
 
+.active-icon a {
+    background-color: red;
+}
+
 
 /* Footer */ 
 

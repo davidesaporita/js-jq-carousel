@@ -32,31 +32,44 @@ $( document ).ready(function() {
 // Right Click or Keydown function
 function goRight() {
     var gallery = $('#gallery');
+    var menuList = $('#img-menu-list');
     var activeImg = gallery.children('.active');
+    var activeIcon = menuList.children('.active-icon');
 
     if(activeImg.next().attr('src') == undefined) {
-        var newImg = gallery.children('img').first();        
+        var newImg = gallery.children('img').first();
+        var newIcon = menuList.children('li').first();
     } else {
         var newImg = activeImg.next();
+        var newIcon = activeIcon.next();
     }      
 
     activeImg.toggleClass('active');
     newImg.toggleClass('active');
-}
 
+    activeIcon.toggleClass('active-icon');
+    newIcon.toggleClass('active-icon');
+}
 
 
 // Left Click or Keydown function
 function goLeft() {
     var gallery = $('#gallery');
+    var menuList = $('#img-menu-list');
     var activeImg = gallery.children('.active');
+    var activeIcon = menuList.children('.active-icon');
 
     if(activeImg.prev().attr('src') == undefined) {
-        var newImg = gallery.children('img').last();        
+        var newImg = gallery.children('img').last();     
+        var newIcon = menuList.children('li').last();   
     } else {
         var newImg = activeImg.prev();
+        var newIcon = activeIcon.prev();
     }
 
     activeImg.toggleClass('active');
     newImg.toggleClass('active');
+
+    activeIcon.toggleClass('active-icon');
+    newIcon.toggleClass('active-icon');
 }
