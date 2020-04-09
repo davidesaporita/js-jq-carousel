@@ -8,3 +8,39 @@
  *  
  */
 
+$( document ).ready(function() {
+    
+    var right = $('#right');
+    var left = $('#left');
+    var gallery = $('#gallery');
+    
+    right.click(function() {
+        var activeImg = gallery.children('.active');
+
+        if(activeImg.next().attr('src') == undefined) {
+            var newImg = gallery.children('img').first();        
+        } else  {
+            var newImg = activeImg.next();
+        }      
+
+        activeImg.toggleClass('active');
+        newImg.toggleClass('active');
+    });
+
+    left.click(function() {
+        var activeImg = gallery.children('.active');
+        console.log(activeImg.prev().attr('src'));
+
+        if(activeImg.prev().attr('src') == undefined) {
+            var newImg = gallery.children('img').last();        
+        } else  {
+            var newImg = activeImg.prev();
+        }      
+
+        activeImg.toggleClass('active');
+        newImg.toggleClass('active');
+    });
+    
+
+// End ready
+});
